@@ -1,0 +1,51 @@
+                    SMART RAILWAY WILDLIFE PROTECTION SYSTEM
+
+                          +----------------------+
+                          |     Arduino UNO      |
+                          |                      |
+      Ultrasonic TRIG ----| D2               5V |------+
+      Ultrasonic ECHO ----| D3              GND |---+--+------------------+
+                          |                      |   |                     |
+        Servo Signal -----| D5                  |   |                     |
+                          |                      |   |                     |
+       Buzzer (+) --------| D6                  |   |                     |
+                          |                      |   |                     |
+      Green LED ----------| D7                  |   |                     |
+      Red LED ------------| D8                  |   |                     |
+                          |                      |   |                     |
+       OLED SDA ----------| A4                  |   |                     |
+       OLED SCL ----------| A5                  |   |                     |
+                          +----------------------+   |                     |
+                                                     |                     |
+                                            +--------+------+              |
+                                            | Ultrasonic    |              |
+                                            | HC-SR04       |              |
+                                            | VCC --> 5V    |              |
+                                            | GND --> GND   |              |
+                                            | TRIG -> D2    |              |
+                                            | ECHO -> D3    |              |
+                                            +---------------+              |
+                                                                            |
+                                            +---------------+               |
+                                            | Servo Motor   |               |
+                                            | VCC --> 5V    |               |
+                                            | GND --> GND   |               |
+                                            | SIG --> D5    |               |
+                                            +---------------+               |
+                                                                            |
+                                            +---------------+               |
+                                            | OLED Display  |               |
+                                            | VCC --> 5V    |               |
+                                            | GND --> GND   |               |
+                                            | SDA --> A4    |               |
+                                            | SCL --> A5    |               |
+                                            +---------------+               |
+                                                                            |
+                                            +---------------+               |
+                                            | Active Buzzer |               |
+                                            | + --> D6      |               |
+                                            | - --> GND     |               |
+                                            +---------------+               |
+                                                                            |
+                                            Green LED --> D7 --220Ω--> GND
+                                            Red LED ----> D8 --220Ω--> GND
