@@ -1,0 +1,17 @@
+Item No,Component,Specification,Quantity,Approx Cost (INR)
+1,Arduino Uno R3,ATmega328P,1,550
+2,HC-SR04 Ultrasonic Sensor,Distance Sensor,1,100
+3,SG90 Servo Motor,180 Degree Micro Servo,1,180
+4,OLED Display,0.96 inch I2C 128x64,1,250
+5,Active Buzzer,5V,1,40
+6,Red LED,5mm,1,10
+7,Green LED,5mm,1,10
+8,220 Ohm Resistor,Carbon Film,2,10
+9,Breadboard,400 Tie Points,1,120
+10,Jumper Wires,Male to Male Set,20,120
+11,USB Cable,Type-A to Type-B,1,120
+12,Toy Railway Track,Prototype Model,1,400
+13,Toy Train,Prototype,1,350
+14,Cardboard/Thermocol Base,Project Base,1,100
+15,5V Power Supply,Adapter or Power Bank,1,250
+,,Total Estimated Cost,,2610
