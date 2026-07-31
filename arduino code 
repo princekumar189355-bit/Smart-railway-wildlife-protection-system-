@@ -1,0 +1,196 @@
+/*
+==========================================================
+SMART RAILWAY WILDLIFE PROTECTION SYSTEM
+Author: Prince Kumar
+Platform: Arduino Uno
+==========================================================
+Components:
+- Arduino Uno
+- HC-SR04 Ultrasonic Sensor
+- Servo Motor (SG90)
+- SSD1306 OLED Display (I2C 128x64)
+- Active Buzzer
+- Red LED
+- Green LED
+==========================================================
+*/
+
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <Servo.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+Servo gateServo;
+
+// Ultrasonic Sensor Pins
+const int trigPin = 2;
+const int echoPin = 3;
+
+// Components
+const int servoPin = 5;
+const int buzzerPin = 6;
+const int greenLED = 7;
+const int redLED = 8;
+
+long duration;
+float distance;
+
+int detectionCount = 0;
+bool animalDetected = false;
+
+void setup() {
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+
+  gateServo.attach(servoPin);
+
+  Serial.begin(9600);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    while (true);
+  }
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+
+  gateServo.write(0);
+
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(redLED, LOW);
+  digitalWrite(buzzerPin, LOW);
+
+  welcomeScreen();
+}
+
+void loop() {
+
+  distance = getDistance();
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  if (distance > 0 && distance < 20) {
+
+    if (!animalDetected) {
+      animalDetected = true;
+      detectionCount++;
+    }
+
+    dangerMode();
+
+  } else {
+
+    animalDetected = false;
+    safeMode();
+
+  }
+
+  delay(300);
+}
+
+float getDistance() {
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+
+  return duration * 0.034 / 2;
+}
+
+void safeMode() {
+
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(redLED, LOW);
+  digitalWrite(buzzerPin, LOW);
+
+  gateServo.write(0);
+
+  display.clearDisplay();
+
+  display.setTextSize(1);
+  display.setCursor(10,5);
+  display.println("SMART RAILWAY");
+
+  display.setCursor(20,20);
+  display.println("SYSTEM READY");
+
+  display.setCursor(40,35);
+  display.println("SAFE");
+
+  display.setCursor(0,55);
+  display.print("Detections: ");
+  display.print(detectionCount);
+
+  display.display();
+}
+
+void dangerMode() {
+
+  digitalWrite(greenLED, LOW);
+  digitalWrite(redLED, HIGH);
+
+  tone(buzzerPin, 1000);
+
+  gateServo.write(90);
+
+  display.clearDisplay();
+
+  display.setTextSize(1);
+
+  display.setCursor(0,5);
+  display.println("WARNING!");
+
+  display.setCursor(0,20);
+  display.println("ANIMAL DETECTED");
+
+  display.setCursor(20,35);
+  display.println("STOP TRAIN");
+
+  display.setCursor(0,55);
+  display.print("Count: ");
+  display.print(detectionCount);
+
+  display.display();
+
+  delay(500);
+
+  noTone(buzzerPin);
+}
+
+void welcomeScreen() {
+
+  display.clearDisplay();
+
+  display.setTextSize(1);
+
+  display.setCursor(15,10);
+  display.println("SMART RAILWAY");
+
+  display.setCursor(10,25);
+  display.println("WILDLIFE");
+
+  display.setCursor(10,40);
+  display.println("PROTECTION");
+
+  display.display();
+
+  delay(2000);
+}
