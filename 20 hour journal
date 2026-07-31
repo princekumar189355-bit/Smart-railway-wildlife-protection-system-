@@ -1,0 +1,149 @@
+20-Hour Project Journal
+
+Project Title
+
+Smart Railway Wildlife Protection System Using Arduino
+
+Student Name: Prince Kumar
+
+---
+
+Day 1 (2 Hours)
+
+Project Planning and Research
+
+- Researched the problem of wildlife accidents on railway tracks.
+- Collected information about existing railway safety systems.
+- Finalized the project idea and listed required components.
+
+Time Spent: 2 Hours
+
+---
+
+Day 2 (2 Hours)
+
+Component Selection
+
+- Selected Arduino Uno as the main controller.
+- Chose the HC-SR04 ultrasonic sensor for animal detection.
+- Selected servo motor, OLED display, buzzer, LEDs, and jumper wires.
+- Prepared the Bill of Materials (BOM).
+
+Time Spent: 2 Hours
+
+---
+
+Day 3 (2 Hours)
+
+Circuit Design
+
+- Designed the rough circuit diagram.
+- Planned pin connections for all components.
+- Verified the wiring before assembly.
+
+Time Spent: 2 Hours
+
+---
+
+Day 4 (2 Hours)
+
+Hardware Assembly
+
+- Connected Arduino to the ultrasonic sensor.
+- Connected LEDs and buzzer.
+- Installed the servo motor.
+- Connected the OLED display.
+
+Time Spent: 2 Hours
+
+---
+
+Day 5 (2 Hours)
+
+Arduino Programming
+
+- Wrote the initial Arduino program.
+- Configured input and output pins.
+- Added ultrasonic sensor reading functions.
+
+Time Spent: 2 Hours
+
+---
+
+Day 6 (2 Hours)
+
+Servo Motor Control
+
+- Programmed the servo motor to simulate a railway barrier.
+- Tested opening and closing positions.
+- Adjusted the servo angle for smooth movement.
+
+Time Spent: 2 Hours
+
+---
+
+Day 7 (2 Hours)
+
+OLED Display Integration
+
+- Installed OLED display libraries.
+- Displayed system status messages.
+- Added detection counter to the screen.
+
+Time Spent: 2 Hours
+
+---
+
+Day 8 (2 Hours)
+
+Testing and Debugging
+
+- Tested object detection at different distances.
+- Corrected wiring issues.
+- Adjusted detection distance for better performance.
+
+Time Spent: 2 Hours
+
+---
+
+Day 9 (2 Hours)
+
+Final Assembly and Documentation
+
+- Organized all components neatly.
+- Prepared the project report.
+- Created the README file.
+- Prepared the circuit diagram.
+
+Time Spent: 2 Hours
+
+---
+
+Day 10 (2 Hours)
+
+Final Demonstration and Submission Preparation
+
+- Performed final testing.
+- Captured project photographs.
+- Recorded a demonstration video.
+- Reviewed all project files before submission.
+
+Time Spent: 2 Hours
+
+---
+
+Total Time
+
+Activity| Hours
+Project Planning| 2
+Component Selection| 2
+Circuit Design| 2
+Hardware Assembly| 2
+Arduino Programming| 2
+Servo Motor Control| 2
+OLED Integration| 2
+Testing & Debugging| 2
+Documentation| 2
+Final Demonstration| 2
+
+Total Project Time: 20 Hours
