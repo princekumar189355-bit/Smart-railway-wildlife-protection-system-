@@ -1,0 +1,28 @@
+Bill of Materials (BOM)
+
+Project Name
+
+Smart Railway Wildlife Protection System
+
+S.No.| Component| Specification| Quantity| Approx. Cost (₹)
+1| Arduino Uno R3| ATmega328P| 1| 550
+2| HC-SR04 Ultrasonic Sensor| Distance Sensor| 1| 100
+3| SG90 Servo Motor| 180° Micro Servo| 1| 180
+4| 0.96" OLED Display| I2C, 128×64| 1| 250
+5| Active Buzzer| 5V| 1| 40
+6| Red LED| 5mm| 1| 10
+7| Green LED| 5mm| 1| 10
+8| 220Ω Resistors| Carbon Film| 2| 10
+9| Breadboard| 400 Tie Points| 1| 120
+10| Jumper Wires| Male-to-Male Set| 20| 120
+11| USB Type-A to Type-B Cable| Arduino Cable| 1| 120
+12| Toy Railway Track| Prototype Model| 1| 400
+13| Toy Train| Battery/Manual| 1| 350
+14| Cardboard/Thermocol Base| Prototype Base| 1| 100
+15| 5V Power Supply| Adapter or Power Bank| 1| 250
+
+Estimated Total Cost
+
+₹2,610 (Approx.)
+
+«Note: Prices are approximate and may vary depending on your supplier and location.»
