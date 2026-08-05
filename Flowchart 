@@ -1,0 +1,75 @@
+                               START
+                                 │
+                                 ▼
+                    Power ON the Arduino System
+                                 │
+                                 ▼
+          Initialize Ultrasonic Sensor, Servo, LED & Buzzer
+                                 │
+                                 ▼
+               Check if all components are responding
+                                 │
+                    ┌────────────┴────────────┐
+                    │                         │
+                  NO                          YES
+                    │                         │
+                    ▼                         ▼
+          Display/Error Check        Begin Continuous Monitoring
+                    │                         │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+          Ultrasonic Sensor Measures Distance
+                                 │
+                                 ▼
+               Is an Object/Animal Detected?
+                                 │
+                    ┌────────────┴────────────┐
+                    │                         │
+                   NO                        YES
+                    │                         │
+                    ▼                         ▼
+          Keep Monitoring           Read Distance Value
+                    │                         │
+                    │                         ▼
+                    │          Is Distance Less Than Threshold?
+                    │                         │
+                    │             ┌───────────┴───────────┐
+                    │             │                       │
+                    │            NO                      YES
+                    │             │                       │
+                    ▼             ▼                       ▼
+          Continue Scanning   Continue Monitoring   Activate Warning System
+                                                      │
+                                                      ▼
+                                            Turn ON Red LED
+                                                      │
+                                                      ▼
+                                              Sound the Buzzer
+                                                      │
+                                                      ▼
+                                         Rotate Servo Barrier (if used)
+                                                      │
+                                                      ▼
+                                  Wait Until Animal/Object Moves Away
+                                                      │
+                                                      ▼
+                              Is the Track Clear After Rechecking?
+                                                      │
+                                   ┌──────────────────┴──────────────────┐
+                                   │                                     │
+                                  NO                                    YES
+                                   │                                     │
+                                   ▼                                     ▼
+                        Keep Warning Active                 Turn OFF LED & Buzzer
+                                   │                                     │
+                                   ▼                                     ▼
+                         Keep Checking Distance             Return Servo to Normal
+                                   │                                     │
+                                   └──────────────────┬──────────────────┘
+                                                      │
+                                                      ▼
+                                          Resume Continuous Monitoring
+                                                      │
+                                                      ▼
+                                                     END
